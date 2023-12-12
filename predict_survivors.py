@@ -90,8 +90,8 @@ def file_shared(payload, client, ack, say):
     # 予測結果ファイルをアップロードする
     channel_id = payload.get('channel_id')
     try:
-        client.files_upload(
-            channels=channel_id,
+        client.files_upload_v2(
+            channel=channel_id,
             title=output_file,
             file=output_file,
             initial_comment="予測結果ファイルを添付します",
